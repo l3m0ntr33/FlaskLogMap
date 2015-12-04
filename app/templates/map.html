@@ -1,0 +1,117 @@
+{% extends "base.html" %}
+{% block content %}
+	<div class="container-fluid">
+		<ul class="nav nav-tabs">
+		  <li class=""><a aria-expanded="false" href="#config" data-toggle="tab">Configure</a></li>
+		  <li class="active"><a aria-expanded="true" href="#map" data-toggle="tab">Map</a></li>
+		  <li class=""><a aria-expanded="false" href="#leg" data-toggle="tab">Legend</a></li>
+		</ul>
+		<div id="myTabContent" class="tab-content">
+			<div id="alertmsg" class="alert alert-dismissible alert-danger" style="display: none;">
+			</div>
+		  <div class="tab-pane fade active in" id="map">
+		    <div class="container1">
+			<div class="map">
+				<span>Alternative content for the map</span>
+			</div>
+		    </div>
+		  </div>
+		  <div class="tab-pane fade" id="leg">
+			<div id="alertmsg" class="alert alert-dismissible alert-danger" style="display: none;">
+			</div>
+		    	<div class="areaLegend">
+				<table id="legend" class="table table-striped table-hover ">
+				  <thead>
+				    <tr>
+				      <th>Time</th>
+				      <th>IP</th>
+				      <th>Country</th>
+				      <th>Timezone</th>
+				    </tr>
+				  </thead>
+				</table> 
+			</div>
+		  </div>
+		  <div class="tab-pane fade" id="config">
+			<div id="alertmsg" class="alert alert-dismissible alert-danger" style="display: none;"></div>
+			<form class="form-inline">
+			  <fieldset>
+			    <legend>Config DB</legend>
+			    <div class="form-group">
+			      <label for="select" class="col-lg-4 control-label">Select DB file:</label>
+				<div class="col-lg-4">
+			        <select class="form-control" id="selectdb"></select>
+				</div>
+			    </div>
+			    <div class="form-group">
+			      <label for="select" class="col-lg-4 control-label">Select table:</label>
+				<div class="col-lg-4">
+			        <select class="form-control" id="selecttable"></select>
+				</div>
+			    </div>
+			  </fieldset>
+			</form>
+
+		<fieldset>
+			<legend>Config Map</legend>
+			<form role="form-inline">
+				<div class="form-group">
+			          <label>Active map</label>
+			          <input id="activemap" type="checkbox">
+			        </div>
+			</form>
+			<form id="mapparam1" class="form-inline" role="form">
+			    <div class="form-group">
+			      <label> Refresh timer (seconds) : </label>
+			      <input value="3" id="refreshtime" type="text" maxlength="6" size="6" >
+			    </div>
+			    <div class="form-group">
+			      <label> |  Displayed history : </label>
+			      <input value="10" id="maxdisp" type="text" maxlength="6" size="4" >
+			    </div>
+			</form>
+			<br>
+			<form id="mapparam2" class="form-inline" role="form">
+
+			    <div class="form-group">
+			          <input id="groupby" type="checkbox">
+				  <label>Active group by : </label>
+			    </div>
+			    <div id="grpbydiv" class="form-group">
+			        <select class="form-control" id="groupbyparam"></select>
+			    </div>
+			    <div class="form-group">
+			      <label for="select"> | Select Latitude field : </label>
+			        <select class="form-control" id="lat"></select>
+			    </div>
+			    <div class="form-group">
+			      <label for="select" > | Select Longitude field : </label>
+			        <select class="form-control" id="long"></select>
+			    </div>
+			</form>
+		</fieldset>
+
+			<form class="form-inline" role="form">
+			  <fieldset>
+			    <legend>Config Legend</legend>
+			    <div class="form-group">
+				<label for="select" >Select legend fields : </label>		
+			        <select id="lgdfield1" class="form-control"></select>
+				<select id="lgdfield2" class="form-control"></select>
+				<select id="lgdfield3" class="form-control"></select>
+				<select id="lgdfield4" class="form-control"></select>
+			    </div>
+			  </fieldset>
+			</form>
+
+				<button id="btnsub" class="btn btn-primary">Submit</button>
+		  </div>
+		</div>
+
+
+			
+	</div>
+
+	<script src="/static/js/map.js" charset="utf-8" ></script>
+	
+{% endblock %}
