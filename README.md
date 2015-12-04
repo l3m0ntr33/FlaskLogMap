@@ -9,4 +9,4 @@ Just launch run.py and connect to your localhost on port 5000.
 
 Go to configure panel, click on DB file select list form to update the others select list forms and be able to select all needed fields and submit.
 
-## Improvements and cleaning of the code coming
+## Improvements and cleaning of the code will coming soon
